@@ -28,6 +28,4 @@ Route::get('/find',function (){
 
 Route::group(['middleware'=>'auth:api'],function (){
     Route::post('movie',[MovieController::class,'store']);
-
-
 });
