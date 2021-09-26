@@ -22,8 +22,8 @@ class UserController extends Controller
     {
         return $this->user->login();
     }
-    public function Register(SignupRequest $request){
-        return $this->user->Register($request->all());
+    public function register(SignupRequest $request){
+        return $this->user->register($request->all());
 
     }
 

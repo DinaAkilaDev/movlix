@@ -18,8 +18,7 @@ class favoritesResource extends JsonResource
         return [
             'id'=>$this->id,
             'user'=>new userResource($this->User),
-            'movie'=>movieResource::collection($this->User
-                ->Movies),
+            'movie'=>movieResource::collection($this->User->Movies),
             ];
 
     }

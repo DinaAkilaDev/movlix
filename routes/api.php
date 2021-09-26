@@ -19,7 +19,7 @@ use \App\Http\Controllers\Api\favoriteController;
 
 
 
-Route::post('/register',[UserController::class,'Register']);
+Route::post('/register',[UserController::class,'register']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/intro',[IntroController::class,'show']);
 

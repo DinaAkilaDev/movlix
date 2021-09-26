@@ -68,15 +68,22 @@ class UserEloquent
         return response()->json(['status' => true, 'statusCode' => 200, 'message' => 'Profile User', 'items' => \auth()->user()]);
     }
 
-    public function Register(array $data)
+    public function register(array $data)
     {
+        $data['password']=bcrypt($data['password']);
+        $user= User::create($data);
+        $accessToken= $user->createToken('authToken')->accessToken;
+        $data = [
+            'status' => true,
+            'statusCode' => 200,
+            'message' => 'Successfully Register!',
+            'items' => [
+                'user' => $user,
+                'token' => $accessToken->token,
+            ],
 
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-        return $this->login();
+        ];
+        return response()->json($data);
     }
 
 }
