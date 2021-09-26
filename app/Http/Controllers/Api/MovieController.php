@@ -8,7 +8,8 @@ use App\Repositories\MovieEloquent;
 
 class MovieController extends Controller
 {
-    public function store(StoreRequest $request){
+    public function store(StoreRequest $request)
+    {
         return $this->movie->store($request->all());
     }
 
@@ -16,6 +17,7 @@ class MovieController extends Controller
     {
         $this->movie = $movieEloquent;
     }
+
     public function show()
     {
         return $this->movie->show();

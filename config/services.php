@@ -41,4 +41,10 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URL'),
     ],
+
+    'twitter' => [
+        'client_id' => 'enter your client id',
+        'client_secret' => 'enter your secret key',
+        'redirect' => 'http://127.0.0.1:8000/callback/twitter',
+    ],
 ];

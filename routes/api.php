@@ -30,6 +30,7 @@ Route::get('/find',function (){
 });
 
 Route::group(['middleware'=>'auth:api'],function (){
+    Route::get('profile',[UserController::class,'profile']);
     Route::post('movie',[MovieController::class,'store']);
     Route::post('/movie-show',[MovieController::class,'show']);
     Route::post('/favorites',[favoriteController::class,'favorite']);

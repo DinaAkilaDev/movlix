@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repositories;
 
 
@@ -17,7 +18,8 @@ class UserEloquent
         $this->model = $user;
     }
 
-    public function login(){
+    public function login()
+    {
         $proxy = Request::create('oauth/token', 'POST');
         $response = Route::dispatch($proxy);
         $statusCode = $response->getStatusCode();
@@ -34,13 +36,26 @@ class UserEloquent
             return response()->json($data);
 
         }
-        $user = User::where('email', \request()->get('username'))->first();
+
+        $token = $response->access_token;
+
+//        \request()->header('Authorization','Bearer '.$response->access_token);
+        \request()->headers->set('Authorization','Bearer '.$token);
+
+        $proxy = Request::create('api/profile', 'GET');
+        $response = Route::dispatch($proxy);
+
+        $statusCode = $response->getStatusCode();
+        $response = json_decode($response->getContent());
+
+        $user = $response->items;
+//        $user = User::where('email', \request()->get('username'))->first();
         $data = [
             'status' => true,
             'statusCode' => $statusCode,
             'message' => 'Successfully Login!',
             'items' => [
-                'token' => $response,
+                'token' => $token,
                 'user' => $user,
             ],
 
@@ -48,8 +63,13 @@ class UserEloquent
         return response()->json($data);
     }
 
+    public function profile()
+    {
+        return response()->json(['status' => true, 'statusCode' => 200, 'message' => 'Profile User', 'items' => \auth()->user()]);
+    }
 
-    public function Register(array $data){
+    public function Register(array $data)
+    {
 
         $user = User::create([
             'name' => $data['name'],

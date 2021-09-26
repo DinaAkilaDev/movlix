@@ -13,8 +13,10 @@ class MovieEloquent
     {
         $this->model = $movie;
     }
-    public function show(){
-        $page_number = intval( \request()->get('page_number'));
+
+    public function show()
+    {
+        $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
         $total_records = Movie::count();
         $total_pages = ceil($total_records / $page_size);
@@ -36,16 +38,18 @@ class MovieEloquent
 
         return response()->json($data);
     }
-    public function store(array $data){
-        $name=json_encode($data);
+
+    public function store(array $data)
+    {
+        $name = json_encode($data);
 //        dd($data);
-        $item = Movie::where("name","like","%$name%")->first();
-        if (!isset($item))
-        {
+        $item = Movie::where("name", "like", "%$name%")->first();
+        if (!isset($item)) {
             $imdb = new \App\Repositories\IMDB($name);
 //            imdbid`, `image`, `name`, `bio`, `year`, `languages`, `country`, `director`, `writer`, `producer`, `url`
 
             $imdData = $imdb->getAll();
+
             $mv = new Movie();
             $mv->imdbid = $imdData['getId']['value'];
             $mv->image = $imdData['getPoster']['value'];
@@ -72,7 +76,7 @@ class MovieEloquent
             ];
             return response()->json($data);
 
-        } else{
+        } else {
             return response()->json($item);
         }
     }
