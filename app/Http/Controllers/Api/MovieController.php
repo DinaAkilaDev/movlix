@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Crew;
+use App\Http\Resources\movieResource;
 use App\Models\Movie;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -15,10 +14,9 @@ class MovieController extends Controller
         $item = Movie::where("name","like","%$name%")->first();
         if (!isset($item))
         {
-            //
+
 
             $imdb = new \App\Repositories\IMDB($name);
-
 
 //            imdbid`, `image`, `name`, `bio`, `year`, `languages`, `country`, `director`, `writer`, `producer`, `url`
 
@@ -54,6 +52,31 @@ class MovieController extends Controller
         } else{
             return response()->json($item);
         }
+
+    }
+
+    public function show(){
+        $page_number = intval( \request()->get('page_number'));
+        $page_size = \request()->get('page_size');
+        $total_records = Movie::count();
+        $total_pages = ceil($total_records / $page_size);
+        $movie = Movie::skip(($page_number - 1) * $page_size)
+            ->take($page_size)->get();
+        $data = [
+            'status' => true,
+            'statusCode' => 200,
+            'message' => 'Success',
+            'items' => [
+                'data' => movieResource::collection($movie),
+                "page_number" => $page_number,
+                "total_pages" => $total_pages,
+                "total_records" => $total_records,
+
+            ]
+
+        ];
+
+        return response()->json($data);
 
     }
 }

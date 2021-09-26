@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\MovieController;
 use App\Http\Controllers\Api\UserController;
+use \App\Http\Controllers\Api\IntroController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +20,7 @@ use App\Http\Controllers\Api\UserController;
 
 Route::post('/register',[UserController::class,'Register']);
 Route::post('/login',[UserController::class,'login']);
+Route::post('/intro',[IntroController::class,'show']);
 
 Route::get('/find',function (){
     $imdb = new \App\Repositories\IMDB('A Hijacking');
@@ -28,4 +30,6 @@ Route::get('/find',function (){
 
 Route::group(['middleware'=>'auth:api'],function (){
     Route::post('movie',[MovieController::class,'store']);
+    Route::post('/movie-show',[MovieController::class,'show']);
+
 });
