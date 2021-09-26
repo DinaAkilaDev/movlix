@@ -29,7 +29,7 @@ class UserTableSeeder extends Seeder
         $user->save();
 
 
-//        `imdbid`, `image`, `name`, `bio`, `year`, `languages`, `country`, `director`, `writer`, `producer`, `cast`, `mpaa`, `url`
+//        `imdbid`, `image`, `name`, `bio`, `year`, `languages`, `country`, `director`, `writer`, `producer`, `cast`, `mpaa`, `url`,cast
         $movie=new Movie();
         $movie->imdbid='dina';
         $movie->image='https://www.imdb.com/title/tt3420504/mediaviewer/rm3492212737/?ref_=tt_ov_i';
@@ -42,6 +42,7 @@ class UserTableSeeder extends Seeder
         $movie->writer='Craig Luck , Ivor Powell';
         $movie->producer='Ivor';
         $movie->url='https://www.imdb.com/video/vi1185071897?playlistId=tt3420504&ref_=tt_ov_vi';
+        $movie->cast='Sapochnik';
         $movie->save();
 
 //        user_id`, `comment`, `movie_id`, `review_id`
@@ -59,12 +60,6 @@ class UserTableSeeder extends Seeder
         $intro->bio='post-apocalyptic earth, a robot, built to protect the life';
         $intro->save();
 
-//        `name`, `job`, `image`
-        $crew=new Crew();
-        $crew->name='Eman';
-        $crew->job='actor';
-        $crew->image='https://www.imdb.com/title/tt3420504/mediaviewer/rm3492212737/?ref_=tt_ov_i';
-        $crew->save();
 
 
 //        `user_id`, `movie_id`
@@ -79,11 +74,7 @@ class UserTableSeeder extends Seeder
         $user_movies->movie_id=$movie->id;
         $user_movies->save();
 
-        //     `crew_id`, `movie_id`
-        $crew_movies=new CrewMovie();
-        $crew_movies->crew_id=$crew->id;
-        $crew_movies->movie_id=$movie->id;
-        $crew_movies->save();
+
 
     }
 }

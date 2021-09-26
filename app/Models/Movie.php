@@ -14,7 +14,5 @@ class Movie extends Model
     public function Reviews(){
         return $this->hasMany(Review::class,'review_id','id');
     }
-    public function Crews(){
-        return $this->belongsToMany(Crew::class, 'crew_movies');
-    }
+
 }

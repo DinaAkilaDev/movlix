@@ -26,6 +26,7 @@ class CreateMoviesTable extends Migration
             $table->string('writer');
             $table->string('producer');
             $table->string('url');
+            $table->longText('cast');
             $table->timestamps();
         });
     }
