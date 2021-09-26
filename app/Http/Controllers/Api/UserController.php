@@ -14,9 +14,6 @@ class UserController extends Controller
 {
     private $contact;
 
-
-
-
     public function __construct(UserEloquent $userEloquent)
     {
         $this->user = $userEloquent;
