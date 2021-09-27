@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Repositories;
 
 /**
@@ -97,7 +96,7 @@ class IMDB
      * @var null|int The ID of the movie.
      */
     public $iId = null;
-    public $sSearch = null;
+
 
     /**
      * @var bool Is the content ready?
@@ -148,7 +147,6 @@ class IMDB
      */
     public function __construct($sSearch, $iCache = null, $sSearchFor = 'all')
     {
-
         $this->sRoot = dirname(__FILE__);
         if (!is_writable($this->sRoot . '/posters') && !mkdir($this->sRoot . '/posters')) {
             throw new Exception('The directory “' . $this->sRoot . '/posters” isn’t writable.');
@@ -194,7 +192,6 @@ class IMDB
     private function fetchUrl($sSearch)
     {
         $sSearch = trim($sSearch);
-        $this->sSearch = $sSearch;
 
         // Try to find a valid URL.
         $sId = IMDBHelper::matchRegex($sSearch, self::IMDB_ID, 1);
@@ -205,7 +202,6 @@ class IMDB
             $this->iId = preg_replace('~[\D]~', '', $sId);
             $this->sUrl = 'https://www.imdb.com/title/tt' . $this->iId . '/reference';
             $bSearch = false;
-
         } else {
 
 
@@ -242,10 +238,7 @@ class IMDB
 
                 $sRedirect = file_get_contents($sRedirectFile);
 
-
                 $this->sUrl = trim($sRedirect);
-
-
                 $this->iId = preg_replace('~[\D]~', '', IMDBHelper::matchRegex($sRedirect, self::IMDB_ID, 1));
                 $bSearch = false;
             }
@@ -274,7 +267,6 @@ class IMDB
 
 
         $aCurlInfo = IMDBHelper::runCurl($this->sUrl);
-
         $sSource = $aCurlInfo['contents'];
 
         if (false === $sSource) {
@@ -328,65 +320,6 @@ class IMDB
         }
 
         return true;
-    }
-
-    private function getId()
-    {
-        $sSearch = $this->sSearch;
-
-        // Try to find a valid URL.
-        $sId = IMDBHelper::matchRegex($sSearch, self::IMDB_ID, 1);
-
-
-        if (false !== $sId) {
-
-            $this->iId = preg_replace('~[\D]~', '', $sId);
-            $this->sUrl = 'https://www.imdb.com/title/tt' . $this->iId . '/reference';
-
-        } else {
-
-
-            switch (strtolower($this->sSearchFor)) {
-                case 'movie':
-                    $sParameters = '&s=tt&ttype=ft';
-                    break;
-                case 'tv':
-                    $sParameters = '&s=tt&ttype=tv';
-                    break;
-                case 'episode':
-                    $sParameters = '&s=tt&ttype=ep';
-                    break;
-                case 'game':
-                    $sParameters = '&s=tt&ttype=vg';
-                    break;
-                default:
-                    $sParameters = '&s=tt';
-            }
-
-            $this->sUrl = 'https://www.imdb.com/find?q=' . rawurlencode(str_replace(' ', '+', $sSearch)) . $sParameters;
-
-            // Was this search already performed and cached?
-            $sRedirectFile = $this->sRoot . '/cache/' . sha1($this->sUrl) . '.redir';
-
-
-            if (is_readable($sRedirectFile)) {
-
-                if (self::IMDB_DEBUG) {
-                    echo '<pre><b>Using redirect:</b> ' . basename($sRedirectFile) . '</pre>';
-                }
-
-                $sRedirect = file_get_contents($sRedirectFile);
-
-
-                $this->sUrl = trim($sRedirect);
-
-
-                $this->iId = preg_replace('~[\D]~', '', IMDBHelper::matchRegex($sRedirect, self::IMDB_ID, 1));
-            }
-
-        }
-
-        return $this->iId;
     }
 
     /**
@@ -729,6 +662,7 @@ class IMDB
      * @param int $iLimit How many cast images should be returned?
      * @param bool $bMore Add … if there are more cast members than printed.
      * @param string $sSize small, mid or big cast images
+     *
      * @param bool $bDownload Return URL or Download
      *
      * @return array Array with cast name as key, and image as value.

@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Http\Resources\movieResource;
 use App\Models\Movie;
-
+use App\Repositories\IMDB;
 class MovieEloquent
 {
     private $model;
@@ -45,13 +45,13 @@ class MovieEloquent
 //        dd($data);
         $item = Movie::where("name", "like", "%$name%")->first();
         if (!isset($item)) {
-            $imdb = new \App\Repositories\IMDB($name);
+            $imdb = new IMDB($name);
 //            imdbid`, `image`, `name`, `bio`, `year`, `languages`, `country`, `director`, `writer`, `producer`, `url`
 
             $imdData = $imdb->getAll();
 
             $mv = new Movie();
-            $mv->imdbid = $imdData['getId']['value'];
+            $mv->imdbid = $imdData['getTitle']['value'];
             $mv->image = $imdData['getPoster']['value'];
             $mv->name = $imdData['getAka']['value'];
             $mv->bio = $imdData['getDescription']['value'];
