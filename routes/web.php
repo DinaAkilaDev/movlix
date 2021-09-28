@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/login/admin', [\App\Http\Controllers\Auth\LoginController::class,'showAdminLoginForm']);
+Route::get('/register/admin', [\App\Http\Controllers\Auth\RegisterController::class,'showAdminRegisterForm']);
+Route::post('/login/admin', [\App\Http\Controllers\Auth\LoginController::class,'adminLogin']);
