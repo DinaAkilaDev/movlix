@@ -3,8 +3,6 @@
 @section('content')
     <div class="container">
     <div class=" login">
-        <!-- BEGIN LOGO -->
-
         <div class="content">
             @isset($url)
                 <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
