@@ -2,28 +2,32 @@
 
 namespace App\Repositories;
 
-use App\Http\Resources\favoriteResource;
-use App\Http\Resources\favoritesResource;
-use App\Models\Favorite;
+use App\Http\Resources\reviewResource;
 use App\Models\Movie;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
-class FavoritesEloquent
+class ReviewEloquent
 {
-    public function favorite()
+    private $model;
+
+    public function __construct(Review $review)
     {
+        $this->model = $review;
+    }
+    public function review(){
         $page_number = intval(\request()->get('page_number'));
         $page_size = \request()->get('page_size');
-        $total_records = Favorite::count();
+        $total_records = Review::count();
         $total_pages = ceil($total_records / $page_size);
-        $favorite = Favorite::skip(($page_number - 1) * $page_size)
+        $review = Review::skip(($page_number - 1) * $page_size)
             ->take($page_size)->get();
         $data = [
             'status' => true,
             'statusCode' => 200,
             'message' => 'Success',
             'items' => [
-                'data' => favoritesResource::collection($favorite),
+                'data' => reviewResource::collection($review),
                 "page_number" => $page_number,
                 "total_pages" => $total_pages,
                 "total_records" => $total_records,
@@ -34,23 +38,25 @@ class FavoritesEloquent
 
         return response()->json($data);
     }
-    public function addfavorites(array $data){
+    public function addreviews(array $data){
         $movies=Movie::find($data['movie_id']);
         if ($movies != null){
-        $favorite = new Favorite();
-        $favorite->user_id = Auth::user()->id;
-        $favorite->movie_id = $data['movie_id'];
-        $favorite->save();
-        $data = [
-            'status' => true,
-            'statusCode' => 200,
-            'message' => 'Successfully Store!',
-            'items' => [
-                'data' =>new favoritesResource($favorite),
-            ],
+            $reviews = new Review();
+            $reviews->user_id = Auth::user()->id;
+            $reviews->comment = $data['comment'];
+            $reviews->movie_id = $data['movie_id'];
+            $reviews->review_id = $data['review_id'];
+            $reviews->save();
+            $data = [
+                'status' => true,
+                'statusCode' => 200,
+                'message' => 'Successfully Store!',
+                'items' => [
+                    'data' =>new reviewResource($reviews),
+                ],
 
-        ];
-        return response()->json($data);
+            ];
+            return response()->json($data);
         }
         else{
             $data = [
@@ -63,4 +69,5 @@ class FavoritesEloquent
             return response()->json($data);
         }
     }
+
 }

@@ -6,6 +6,7 @@ use \App\Http\Controllers\Api\MovieController;
 use App\Http\Controllers\Api\UserController;
 use \App\Http\Controllers\Api\IntroController;
 use \App\Http\Controllers\Api\favoriteController;
+use \App\Http\Controllers\Api\reviewController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,5 +36,7 @@ Route::group(['middleware'=>'auth:api'],function (){
     Route::post('/movie-show',[MovieController::class,'show']);
     Route::post('/favorites',[favoriteController::class,'favorite']);
     Route::post('/favorite',[favoriteController::class,'addfavorites']);
+    Route::post('/reviews',[reviewController::class,'review']);
+    Route::post('/review',[reviewController::class,'addreviews']);
 
 });

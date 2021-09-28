@@ -14,5 +14,8 @@ class Movie extends Model
     public function Reviews(){
         return $this->hasMany(Review::class,'review_id','id');
     }
+    public function Favorite(){
+        return $this->hasMany(Favorite::class,'favorite_id','id');
+    }
 
 }
