@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::view('/', 'welcome');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/login/admin', [\App\Http\Controllers\Auth\LoginController::class,'showAdminLoginForm']);
-Route::get('/register/admin', [\App\Http\Controllers\Auth\RegisterController::class,'showAdminRegisterForm']);
-Route::post('/login/admin', [\App\Http\Controllers\Auth\LoginController::class,'adminLogin']);
+Route::get('/login/admin', [LoginController::class,'showAdminLoginForm']);
+Route::get('/register/admin', [RegisterController::class,'showAdminRegisterForm']);
+
+Route::post('/login/admin', [LoginController::class,'adminLogin']);
+Route::post('/register/admin', [RegisterController::class,'createAdmin']);
+
+Route::view('/home', 'home')->middleware('auth');
+Route::view('/admin', 'admin');

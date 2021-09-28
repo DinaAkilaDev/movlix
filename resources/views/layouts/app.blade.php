@@ -20,8 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @include('includes.css')
 </head>
-<body>
-    <div id="app">
+<body style="color: whitesmoke;background-color: #1C162E;">
+    <div id="app" >
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -42,13 +42,13 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item" style="padding-left: 10px">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item"  style="padding-left: 10px">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
@@ -65,7 +65,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
