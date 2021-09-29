@@ -38,7 +38,7 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <img src="{{asset('../assets/global/img/Path 1420.png')}}">
+                    <img src="{{asset('../assets/pages/img/Path 1420.png')}}">
                     <h1 style="color: whitesmoke;padding-left: 10px">Movlix</h1>
                 </div>
             </div>

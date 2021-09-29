@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
     <div class=" login">
         <div class="content">
+            <div class="logo">
+                <a href="{{ url('/') }}">
+                    <img src="{{asset('../assets/pages/img/Path 1420.png')}}">
+                </a>
+            </div>
             @isset($url)
                 <form method="POST" action='{{ url("register/$url") }}' aria-label="{{ __('Register') }}">
                     @else
@@ -62,6 +66,5 @@
                             </div>
                         </form>
         </div>
-    </div>
     </div>
 @endsection
