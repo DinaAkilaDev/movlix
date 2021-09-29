@@ -361,15 +361,15 @@
                                                     <table class="table table-striped table-hover table-bordered" id="sample_editable_1" style="color: #0c0c0c">
                                                         <thead>
                                                         <tr>
-                                                            <th> user_id </th>
-                                                            <th> movie_id </th>
+                                                            <th> user </th>
+                                                            <th> movie </th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
                                                         @foreach($favorite as $fav)
                                                             <tr>
-                                                                <td>{{$fav['user_id']}}</td>
-                                                                <td>{{$fav['movie_id']}}</td>
+                                                                <td>{{$fav->User['name']}}</td>
+                                                                <td>{{$fav->Movie['name']}}</td>
                                                                 <td>
                                                                     <a class="edit" style="color: green" href="javascript:;"> Edit </a>
                                                                 </td>
