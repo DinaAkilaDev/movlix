@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use \App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,7 @@ Route::get('/register/admin', [RegisterController::class,'showAdminRegisterForm'
 
 Route::post('/login/admin', [LoginController::class,'adminLogin']);
 Route::post('/register/admin', [RegisterController::class,'createAdmin']);
+Route::get('/admin/movies', [AdminController::class,'showmovies']);
 
 Route::view('/home', 'home')->middleware('auth');
 Route::view('/admin', 'admin');
