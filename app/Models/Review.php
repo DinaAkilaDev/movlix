@@ -11,5 +11,8 @@ class Review extends Model
     public function Movie(){
         return $this->belongsTo(Movie::class,'movie_id');
     }
+    public function User(){
+        return $this->belongsTo(User::class,'user_id');
+    }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Intro;
 use App\Models\Movie;
 use App\Models\Review;
 use App\Models\User;
@@ -26,5 +27,9 @@ class AdminController extends Controller
     public function showfavorites(){
         $favorite=Favorite::all();
         return view('favoritestable')->with(compact('favorite'));
+    }
+    public function showintros(){
+        $intro=Intro::all();
+        return view('introstable')->with(compact('intro'));
     }
 }

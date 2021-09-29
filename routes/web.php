@@ -29,6 +29,7 @@ Route::get('/admin/movies', [AdminController::class,'showmovies']);
 Route::get('/admin/users', [AdminController::class,'showusers']);
 Route::get('/admin/reviews', [AdminController::class,'showreview']);
 Route::get('/admin/favorites', [AdminController::class,'showfavorites']);
+Route::get('/admin/intros', [AdminController::class,'showintros']);
 
 Route::view('/home', 'home')->middleware('auth');
 Route::view('/admin', 'admin');

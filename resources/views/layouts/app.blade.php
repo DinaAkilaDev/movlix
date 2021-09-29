@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @include('includes.css')
 </head>
-<body style="color: whitesmoke;background-color: #1C162E;">
+<body style="color: whitesmoke;background-color: #1C162E;font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5">
     <div id="app" >
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
