@@ -31,12 +31,6 @@
                                 <img src="{{asset('../assets/pages/img/Path 1420.png')}}" alt="Logo"> </a>
                             <!-- END LOGO -->
                             <!-- BEGIN SEARCH -->
-                            <form class="search" action="extra_search.html" method="GET">
-                                <input type="name" class="form-control" name="query" placeholder="Search...">
-                                <a href="javascript:;" class="btn submit md-skip">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
 
                             <div class="topbar-actions">
 
@@ -211,10 +205,10 @@
                                                             <td><img src="{{$in['image']}}" width="200px" height="350px"></td>
                                                             <td>{{$in['bio']}}</td>
                                                             <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
+                                                                <a class="edit" style="color: green" href="javascript:;"> Edit </a>
                                                             </td>
                                                             <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
+                                                                <a class="delete" style="color: red" href="javascript:;"> Delete </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
