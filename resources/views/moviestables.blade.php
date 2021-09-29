@@ -37,139 +37,9 @@
                                         <i class="fa fa-search"></i>
                                     </a>
                                 </form>
-                                <!-- END SEARCH -->
-                                <!-- BEGIN TOPBAR ACTIONS -->
+
                                 <div class="topbar-actions">
-                                    <!-- BEGIN GROUP NOTIFICATION -->
-                                    <div class="btn-group-notification btn-group" id="header_notification_bar">
-                                        <button type="button" class="btn btn-sm md-skip dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                            <i class="icon-bell"></i>
-                                            <span class="badge">7</span>
-                                        </button>
-                                        <ul class="dropdown-menu-v2">
-                                            <li class="external">
-                                                <h3>
-                                                    <span class="bold">12 pending</span> notifications</h3>
-                                                <a href="#">view all</a>
-                                            </li>
-                                            <li>
-                                                <ul class="dropdown-menu-list scroller" style="height: 250px; padding: 0;" data-handle-color="#637283">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-success md-skip">
-                                                                <i class="fa fa-plus"></i>
-                                                            </span> New user registered. </span>
-                                                            <span class="time">just now</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-danger md-skip">
-                                                                <i class="fa fa-bolt"></i>
-                                                            </span> Server #12 overloaded. </span>
-                                                            <span class="time">3 mins</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-warning md-skip">
-                                                                <i class="fa fa-bell-o"></i>
-                                                            </span> Server #2 not responding. </span>
-                                                            <span class="time">10 mins</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-info md-skip">
-                                                                <i class="fa fa-bullhorn"></i>
-                                                            </span> Application error. </span>
-                                                            <span class="time">14 hrs</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-danger md-skip">
-                                                                <i class="fa fa-bolt"></i>
-                                                            </span> Database overloaded 68%. </span>
-                                                            <span class="time">2 days</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-danger md-skip">
-                                                                <i class="fa fa-bolt"></i>
-                                                            </span> A user IP blocked. </span>
-                                                            <span class="time">3 days</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-warning md-skip">
-                                                                <i class="fa fa-bell-o"></i>
-                                                            </span> Storage Server #4 not responding dfdfdfd. </span>
-                                                            <span class="time">4 days</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-info md-skip">
-                                                                <i class="fa fa-bullhorn"></i>
-                                                            </span> System Error. </span>
-                                                            <span class="time">5 days</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                        <span class="details">
-                                                            <span class="label label-sm label-icon label-danger md-skip">
-                                                                <i class="fa fa-bolt"></i>
-                                                            </span> Storage server failed. </span>
-                                                            <span class="time">9 days</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- END GROUP NOTIFICATION -->
-                                    <!-- BEGIN GROUP INFORMATION -->
-                                    <div class="btn-group-red btn-group">
-                                        <button type="button" class="btn btn-sm md-skip dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                        <ul class="dropdown-menu-v2" role="menu">
-                                            <li class="active">
-                                                <a href="#">New Post</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">New Comment</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Share</a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
-                                                <a href="#">Comments
-                                                    <span class="badge badge-success">4</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Feedbacks
-                                                    <span class="badge badge-danger">2</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- END GROUP INFORMATION -->
-                                    <!-- BEGIN USER PROFILE -->
+
                                     <div class="btn-group-img btn-group">
                                         <button type="button" class="btn btn-sm md-skip dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                             <span>Hi, Marcus</span>
@@ -208,17 +78,13 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- END USER PROFILE -->
-                                    <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+
                                     <button type="button" class="quick-sidebar-toggler md-skip" data-toggle="collapse">
                                         <span class="sr-only">Toggle Quick Sidebar</span>
                                         <i class="icon-logout"></i>
                                     </button>
-                                    <!-- END QUICK SIDEBAR TOGGLER -->
                                 </div>
-                                <!-- END TOPBAR ACTIONS -->
                             </div>
-                            <!-- BEGIN HEADER MENU -->
                             <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse">
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
@@ -319,14 +185,6 @@
                                                         <i class="icon-settings font-red"></i>
                                                         <span class="caption-subject font-red sbold uppercase">Editable Table</span>
                                                     </div>
-                                                    <div class="actions">
-                                                        <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                                            <label class="btn btn-transparent red btn-outline btn-circle btn-sm active">
-                                                                <input type="radio" name="options" class="toggle" id="option1">Actions</label>
-                                                            <label class="btn btn-transparent red btn-outline btn-circle btn-sm">
-                                                                <input type="radio" name="options" class="toggle" id="option2">Settings</label>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                                 <div class="portlet-body">
                                                     <div class="table-toolbar">
@@ -338,43 +196,39 @@
                                                                     </button>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div class="btn-group pull-right">
-                                                                    <button class="btn green btn-outline dropdown-toggle" data-toggle="dropdown">Tools
-                                                                        <i class="fa fa-angle-down"></i>
-                                                                    </button>
-                                                                    <ul class="dropdown-menu pull-right">
-                                                                        <li>
-                                                                            <a href="javascript:;"> Print </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="javascript:;"> Save as PDF </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="javascript:;"> Export to Excel </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                     <table class="table table-striped table-hover table-bordered" id="sample_editable_1" style="color: #0c0c0c">
                                                         <thead>
                                                         <tr>
-                                                            <th> Username </th>
-                                                            <th> Full Name </th>
-                                                            <th> Points </th>
-                                                            <th> Notes </th>
-                                                            <th> Edit </th>
-                                                            <th> Delete </th>
+                                                            <th> name </th>
+                                                            <th> image</th>
+                                                            <th> bio </th>
+                                                            <th> year </th>
+                                                            <th> languages </th>
+                                                            <th> country </th>
+                                                            <th> director </th>
+                                                            <th> writer </th>
+                                                            <th> producer </th>
+                                                            <th> url </th>
+                                                            <th> cast </th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
+                                                        @foreach($movies as $mv)
                                                         <tr>
-                                                            <td> alex </td>
-                                                            <td> Alex Nilson </td>
-                                                            <td> 1234 </td>
-                                                            <td class="center"> power user </td>
+                                                            <td>{{$mv['name']}}</td>
+                                                            <td><img src="{{$mv['image']}}" width="200px" height="350px"></td>
+                                                            <td>{{$mv['bio']}}</td>
+                                                            <td>{{$mv['year']}}</td>
+                                                            <td>{{$mv['languages']}}</td>
+
+                                                            <td>{{$mv['country']}}</td>
+                                                            <td>{{$mv['director']}}</td>
+                                                            <td>{{$mv['writer']}}</td>
+                                                            <td>{{$mv['producer']}}</td>
+                                                            <td><a style="color: blue" href="{{$mv['url']}}">link</a></td>
+                                                            <td>{{$mv['cast']}}</td>
                                                             <td>
                                                                 <a class="edit" href="javascript:;"> Edit </a>
                                                             </td>
@@ -382,90 +236,7 @@
                                                                 <a class="delete" href="javascript:;"> Delete </a>
                                                             </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td> lisa </td>
-                                                            <td> Lisa Wong </td>
-                                                            <td> 434 </td>
-                                                            <td class="center"> new user </td>
-                                                            <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
-                                                            </td>
-                                                            <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td> nick12 </td>
-                                                            <td> Nick Roberts </td>
-                                                            <td> 232 </td>
-                                                            <td class="center"> power user </td>
-                                                            <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
-                                                            </td>
-                                                            <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td> goldweb </td>
-                                                            <td> Sergio Jackson </td>
-                                                            <td> 132 </td>
-                                                            <td class="center"> elite user </td>
-                                                            <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
-                                                            </td>
-                                                            <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td> alex </td>
-                                                            <td> Alex Nilson </td>
-                                                            <td> 1234 </td>
-                                                            <td class="center"> power user </td>
-                                                            <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
-                                                            </td>
-                                                            <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td> webriver </td>
-                                                            <td> Antonio Sanches </td>
-                                                            <td> 462 </td>
-                                                            <td class="center"> new user </td>
-                                                            <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
-                                                            </td>
-                                                            <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td> gist124 </td>
-                                                            <td> Nick Roberts </td>
-                                                            <td> 62 </td>
-                                                            <td class="center"> new user </td>
-                                                            <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
-                                                            </td>
-                                                            <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td> alex </td>
-                                                            <td> Alex Nilson </td>
-                                                            <td> 1234 </td>
-                                                            <td class="center"> power user </td>
-                                                            <td>
-                                                                <a class="edit" href="javascript:;"> Edit </a>
-                                                            </td>
-                                                            <td>
-                                                                <a class="delete" href="javascript:;"> Delete </a>
-                                                            </td>
-                                                        </tr>
+                                                        @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -1053,38 +824,7 @@
             </div>
             <!-- END QUICK SIDEBAR -->
             <!-- BEGIN QUICK NAV -->
-            <nav class="quick-nav">
-                <a class="quick-nav-trigger" href="#0">
-                    <span aria-hidden="true"></span>
-                </a>
-                <ul>
-                    <li>
-                        <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" target="_blank" class="active">
-                            <span>Purchase Metronic</span>
-                            <i class="icon-basket"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/reviews/4021469?ref=keenthemes" target="_blank">
-                            <span>Customer Reviews</span>
-                            <i class="icon-users"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://keenthemes.com/showcast/" target="_blank">
-                            <span>Showcase</span>
-                            <i class="icon-user"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://keenthemes.com/metronic-theme/changelog/" target="_blank">
-                            <span>Changelog</span>
-                            <i class="icon-graph"></i>
-                        </a>
-                    </li>
-                </ul>
-                <span aria-hidden="true" class="quick-nav-bg"></span>
-            </nav>
+
             <div class="quick-nav-overlay"></div>
             <!-- END QUICK NAV -->
 
