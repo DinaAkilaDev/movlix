@@ -29,3 +29,4 @@ Route::get('/admin/movies', [AdminController::class,'showmovies']);
 
 Route::view('/home', 'home')->middleware('auth');
 Route::view('/admin', 'admin');
+Route::view('/tables', 'tables');
