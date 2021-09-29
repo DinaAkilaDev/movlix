@@ -26,6 +26,9 @@ Route::get('/register/admin', [RegisterController::class,'showAdminRegisterForm'
 Route::post('/login/admin', [LoginController::class,'adminLogin']);
 Route::post('/register/admin', [RegisterController::class,'createAdmin']);
 Route::get('/admin/movies', [AdminController::class,'showmovies']);
+Route::get('/admin/users', [AdminController::class,'showusers']);
+Route::get('/admin/reviews', [AdminController::class,'showreview']);
+Route::get('/admin/favorites', [AdminController::class,'showfavorites']);
 
 Route::view('/home', 'home')->middleware('auth');
 Route::view('/admin', 'admin');
