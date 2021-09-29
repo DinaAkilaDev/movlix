@@ -9,6 +9,6 @@ class AdminController extends Controller
 {
     public function showmovies(){
         $movies=Movie::all();
-        return view('moviestable')->with(compact('movies'));
+        return view('moviestables')->with(compact('movies'));
     }
 }

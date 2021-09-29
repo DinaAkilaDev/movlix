@@ -28,7 +28,7 @@
                                 <!-- End Toggle Button -->
                                 <!-- BEGIN LOGO -->
                                 <a id="index" class="page-logo" href="index.html">
-                                    <img src="../assets/layouts/layout5/img/logo.png" alt="Logo"> </a>
+                                    <img src="{{asset('../assets/pages/img/Path 1420.png')}}" alt="Logo"> </a>
                                 <!-- END LOGO -->
                                 <!-- BEGIN SEARCH -->
                                 <form class="search" action="extra_search.html" method="GET">
