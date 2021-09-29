@@ -20,17 +20,24 @@ use \App\Http\Controllers\AdminController;
 Route::view('/', 'welcome');
 Auth::routes();
 
-Route::get('/login/admin', [LoginController::class,'showAdminLoginForm']);
-Route::get('/register/admin', [RegisterController::class,'showAdminRegisterForm']);
+Route::get('/admin/login', [LoginController::class,'showAdminLoginForm']);
+Route::get('/admin/register', [RegisterController::class,'showAdminRegisterForm']);
 
-Route::post('/login/admin', [LoginController::class,'adminLogin']);
-Route::post('/register/admin', [RegisterController::class,'createAdmin']);
-Route::get('/admin/movies', [AdminController::class,'showmovies']);
-Route::get('/admin/users', [AdminController::class,'showusers']);
-Route::get('/admin/reviews', [AdminController::class,'showreview']);
-Route::get('/admin/favorites', [AdminController::class,'showfavorites']);
-Route::get('/admin/intros', [AdminController::class,'showintros']);
+Route::post('/admin/login', [LoginController::class,'adminLogin']);
+Route::post('/admin/register', [RegisterController::class,'createAdmin']);
+
 
 Route::view('/home', 'home')->middleware('auth');
-Route::view('/admin', 'admin');
-Route::view('/tables', 'tables');
+
+
+//Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
+//    // Admin Dashboard
+    Route::view('/admin', 'admin');
+    Route::view('/tables', 'tables');
+
+    Route::get('/admin/movies', [AdminController::class,'showmovies']);
+    Route::get('/admin/users', [AdminController::class,'showusers']);
+    Route::get('/admin/reviews', [AdminController::class,'showreview']);
+    Route::get('/admin/favorites', [AdminController::class,'showfavorites']);
+    Route::get('/admin/intros', [AdminController::class,'showintros']);
+//});
