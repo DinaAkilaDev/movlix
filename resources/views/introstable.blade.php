@@ -140,13 +140,13 @@
                                                     <tbody>
                                                     @foreach($intro as $in)
                                                         <tr>
-                                                            <td><img src="{{$in['image']}}" width="200px" height="350px"></td>
+                                                            <td><img src="{{$in['image']}}" width="200px" height="200px"></td>
                                                             <td> {{$in['bio']}} </td>
                                                             <td>
                                                                 <a class="edit" style="color: green" href="javascript:;"> Edit </a>
                                                             </td>
                                                             <td>
-                                                                <a class="delete" style="color: red" href="javascript:;"> Delete </a>
+                                                                <a  style="color: red" href="{{url('/admin/intros/delete/'.$in['id'])}}"> Delete </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

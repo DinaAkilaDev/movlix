@@ -146,7 +146,7 @@
                                                                 <a class="edit" style="color: green" href="javascript:;"> Edit </a>
                                                             </td>
                                                             <td>
-                                                                <a class="delete" style="color: red" href="javascript:;"> Delete </a>
+                                                                <a  style="color: red" href="{{url('/admin/favorites/delete/'.$fav['id'])}}"> Delete </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

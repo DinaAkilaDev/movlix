@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Redirect;
 use Session;
 use App\Models\Favorite;
 use App\Models\Intro;
@@ -84,5 +85,30 @@ class AdminController extends Controller
     public function dashboard()
     {
         return view('admin');
+    }
+    public function deletemovie($id){
+        $movie= Movie::find($id);
+        $movie->destroy($id);
+        return Redirect::back();
+    }
+    public function deleteintro($id){
+        $intro= Intro::find($id);
+        $intro->destroy($id);
+        return Redirect::back();
+    }
+    public function deletefavorite($id){
+        $favorite= Favorite::find($id);
+        $favorite->destroy($id);
+        return Redirect::back();
+    }
+    public function deletereview($id){
+        $review= Review::find($id);
+        $review->destroy($id);
+        return Redirect::back();
+    }
+    public function deleteuser($id){
+        $user= User::find($id);
+        $user->destroy($id);
+        return Redirect::back();
     }
 }

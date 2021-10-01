@@ -36,8 +36,17 @@ Route::view('/home', 'home')->middleware('auth');
     Route::view('/tables', 'tables');
 
     Route::get('/admin/movies', [AdminController::class,'showmovies']);
+    Route::get('/admin/movies/delete/{id}', [AdminController::class, 'deletemovie']);
+
     Route::get('/admin/users', [AdminController::class,'showusers']);
+    Route::get('/admin/users/delete/{id}', [AdminController::class, 'deleteuser']);
+
     Route::get('/admin/reviews', [AdminController::class,'showreview']);
+    Route::get('/admin/reviews/delete/{id}', [AdminController::class, 'deletereview']);
+
     Route::get('/admin/favorites', [AdminController::class,'showfavorites']);
+    Route::get('/admin/favorites/delete/{id}', [AdminController::class, 'deletefavorite']);
+
     Route::get('/admin/intros', [AdminController::class,'showintros']);
+    Route::get('/admin/intros/delete/{id}', [AdminController::class, 'deleteintro']);
 //});
