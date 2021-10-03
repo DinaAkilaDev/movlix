@@ -170,12 +170,13 @@
 
                                             </div>
                                         </div>
+
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Country</label>
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
-                                                        <i class="fa fa-language"></i>
+                                                        <i class="fa fa-flag"></i>
                                                     </span>
                                                     <input type="text" name="country" value="{{$movies->country}}" class="form-control"
                                                            placeholder="Country">
