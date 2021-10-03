@@ -30,9 +30,9 @@ Route::post('/admin/register', [RegisterController::class,'createAdmin']);
 Route::view('/home', 'home')->middleware('auth');
 
 
-Route::group(['middleware' => 'auth'], function () {
+//Route::group(['middleware' => 'auth'], function () {
 //
-    Route::view('/admin', 'admin');
+    Route::view('/admin', 'admin')->name('admin');
     Route::view('/tables', 'tables');
 
     Route::get('/admin/movies', [AdminController::class,'showmovies']);
@@ -51,4 +51,4 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/intros', [AdminController::class,'showintros']);
     Route::get('/admin/intros/delete/{id}', [AdminController::class, 'deleteintro']);
-});
+//});
