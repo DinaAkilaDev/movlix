@@ -60,7 +60,7 @@
                 <div class="page-content">
                     <!-- BEGIN BREADCRUMBS -->
                     <div class="breadcrumbs">
-                        <h1>User table</h1>
+                        <h1>Favorites table</h1>
                         <ol class="breadcrumb">
                             <li>
                                 <a href="{{url('/')}}">Home</a>
@@ -84,11 +84,11 @@
                         <div class="portlet box yellow">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i>Edit User
+                                    <i class="fa fa-gift"></i>Edit Favorites
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <form action="{{route('edituser')}}" method="post" class="form-horizontal">
+                                <form action="{{route('editfavorite')}}" method="post" class="form-horizontal">
                                     @csrf
 
                                     <div class="form-body">
@@ -97,28 +97,28 @@
                                                 <h4 class="col-md-3 control-label" style="color: green;">{{$errors->first()}}</h4>
                                             @endif </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">name</label>
+                                            <label class="col-md-3 control-label">user_id</label>
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                    <input type="text" name="name" value="{{$users->name}}" class="form-control"
-                                                           placeholder="name">
-                                                    <input type="hidden" name="id" value="{{$users->id}}"  required>
+                                                    <input type="number" name="user_id" value="{{$favorites->user_id}}" class="form-control"
+                                                           placeholder="user_id">
+                                                    <input type="hidden" name="id" value="{{$favorites->id}}"  required>
                                                 </div>
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">email</label>
+                                            <label class="col-md-3 control-label">movie_id</label>
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-sticky-note"></i>
                                                     </span>
-                                                    <input type="email" name="email" value="{{$users->email}}" class="form-control"
-                                                           placeholder="email">
+                                                    <input type="number" name="movie_id" value="{{$favorites->movie_id}}" class="form-control"
+                                                           placeholder="movie_id">
                                                 </div>
 
                                             </div>

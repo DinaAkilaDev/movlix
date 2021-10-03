@@ -120,9 +120,9 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <div class="btn-group">
-                                                                    <button id="sample_editable_1_new" class="btn green"> Add New
+                                                                    <a href="{{url('/admin/users/add')}}"> Add New
                                                                         <i class="fa fa-plus"></i>
-                                                                    </button>
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                         </div>

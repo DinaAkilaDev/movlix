@@ -37,21 +37,32 @@ Route::view('/home', 'home')->middleware('auth');
     Route::get('/admin/movies', [AdminController::class,'showmovies']);
     Route::get('/admin/movies/delete/{id}', [AdminController::class, 'deletemovie']);
     Route::get('/admin/movies/edit/{id}', [AdminController::class, 'editmovie']);
-    Route::get('/admin/intros/edit/{id}', [AdminController::class, 'editintro']);
-    Route::get('/admin/users/edit/{id}', [AdminController::class, 'edituser']);
     Route::post('/admin/movies/edit', [AdminController::class, 'editedmovie'])->name('editmovie');
-    Route::post('/admin/intros/edit', [AdminController::class, 'editedintro'])->name('editintro');
-    Route::post('/admin/users/edit', [AdminController::class, 'editeduser'])->name('edituser');
+
 
     Route::get('/admin/users', [AdminController::class,'showusers']);
     Route::get('/admin/users/delete/{id}', [AdminController::class, 'deleteuser']);
+    Route::post('/admin/users/edit', [AdminController::class, 'editeduser'])->name('edituser');
+    Route::get('/admin/users/edit/{id}', [AdminController::class, 'edituser']);
+
 
     Route::get('/admin/reviews', [AdminController::class,'showreview']);
     Route::get('/admin/reviews/delete/{id}', [AdminController::class, 'deletereview']);
+    Route::post('/admin/reviews/edit', [AdminController::class, 'editedreview'])->name('editreview');
+    Route::get('/admin/reviews/edit/{id}', [AdminController::class, 'editreview']);
+    Route::get('/admin/reviews/add', [AdminController::class, 'addreview']);
+    Route::post('/admin/reviews/add', [AdminController::class, 'addedreview'])->name('addreview');
+
 
     Route::get('/admin/favorites', [AdminController::class,'showfavorites']);
     Route::get('/admin/favorites/delete/{id}', [AdminController::class, 'deletefavorite']);
+    Route::post('/admin/favorites/edit', [AdminController::class, 'editedfavorite'])->name('editfavorite');
+    Route::get('/admin/favorites/edit/{id}', [AdminController::class, 'editfavorite']);
+
 
     Route::get('/admin/intros', [AdminController::class,'showintros']);
     Route::get('/admin/intros/delete/{id}', [AdminController::class, 'deleteintro']);
+    Route::post('/admin/intros/edit', [AdminController::class, 'editedintro'])->name('editintro');
+    Route::get('/admin/intros/edit/{id}', [AdminController::class, 'editintro']);
+
 //});

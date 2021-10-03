@@ -60,7 +60,7 @@
                 <div class="page-content">
                     <!-- BEGIN BREADCRUMBS -->
                     <div class="breadcrumbs">
-                        <h1>User table</h1>
+                        <h1>Review table</h1>
                         <ol class="breadcrumb">
                             <li>
                                 <a href="{{url('/')}}">Home</a>
@@ -84,56 +84,81 @@
                         <div class="portlet box yellow">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i>Edit User
+                                    <i class="fa fa-gift"></i>Add Review
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <form action="{{route('edituser')}}" method="post" class="form-horizontal">
+                                <form action="{{route('addreview')}}" method="post" class="form-horizontal">
                                     @csrf
-
                                     <div class="form-body">
                                         <div class="form-group">
                                             @if($errors->any())
                                                 <h4 class="col-md-3 control-label" style="color: green;">{{$errors->first()}}</h4>
                                             @endif </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">name</label>
+                                            <label class="col-md-3 control-label">user_id</label>
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-key"></i>
                                                     </span>
-                                                    <input type="text" name="name" value="{{$users->name}}" class="form-control"
-                                                           placeholder="name">
-                                                    <input type="hidden" name="id" value="{{$users->id}}"  required>
+                                                    <input type="number" name="user_id"  class="form-control"
+                                                           placeholder="user_id">
                                                 </div>
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">email</label>
+                                            <label class="col-md-3 control-label">comment</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-image"></i>
+                                                    </span>
+                                                    <input type="text" name="comment"  class="form-control"
+                                                           placeholder="comment">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">movie_id</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-file-movie-o"></i>
+                                                    </span>
+                                                    <input type="number" name="movie_id"  class="form-control"
+                                                           placeholder="movie_id">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">review_id</label>
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-sticky-note"></i>
                                                     </span>
-                                                    <input type="email" name="email" value="{{$users->email}}" class="form-control"
-                                                           placeholder="email">
+                                                    <input type="number" name="review_id"  class="form-control"
+                                                           placeholder="review_id">
                                                 </div>
 
                                             </div>
                                         </div>
 
-                                    </div>
-                                    <div class="form-actions fluid">
-                                        <div class="row">
-                                            <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" class="btn green">Submit</button>
-                                                <button type="button" class="btn default">Cancel</button>
-                                            </div>
 
+
+                                        <div class="form-actions fluid">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" class="btn green">Submit</button>
+                                                    <button type="button" class="btn default">Cancel</button>
+                                                </div>
+
+                                            </div>
                                         </div>
-                                    </div>
                                 </form>
 
                             </div>

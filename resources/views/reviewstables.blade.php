@@ -120,9 +120,9 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="btn-group">
-                                                                <button id="sample_editable_1_new" class="btn green"> Add New
+                                                                <a href="{{url('/admin/reviews/add')}}" > Add New
                                                                     <i class="fa fa-plus"></i>
-                                                                </button>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,15 +142,15 @@
                                                     <tbody>
                                                     @foreach($reviews as $re)
                                                         <tr>
-                                                            <td> {{$re->User['name']}} </td>
-                                                            <td> {{$re['comment']}} </td>
-                                                            <td> {{$re->Movie['name']}} </td>
-                                                            <td class="center"> {{$re['review_id']}} </td>
+                                                            <td> {{$re->User->name}} </td>
+                                                            <td> {{$re->comment}} </td>
+                                                            <td> {{$re->Movie->name}} </td>
+                                                            <td class="center"> {{$re->review_id}} </td>
                                                             <td>
-                                                                <a class="edit" style="color: green" href="javascript:;"> Edit </a>
+                                                                <a  style="color: green" href="{{url('/admin/reviews/edit/'.$re->id)}}"> Edit </a>
                                                             </td>
                                                             <td>
-                                                                <a  style="color: red" href="{{url('/admin/reviews/delete/'.$re['id'])}}"> Delete </a>
+                                                                <a  style="color: red" href="{{url('/admin/reviews/delete/'.$re->id)}}"> Delete </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

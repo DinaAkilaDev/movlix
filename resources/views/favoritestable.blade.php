@@ -120,9 +120,9 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="btn-group">
-                                                                <button id="sample_editable_1_new" class="btn green"> Add New
+                                                                <a href="{{url('/admin/favorites/add')}}" > Add New
                                                                     <i class="fa fa-plus"></i>
-                                                                </button>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -143,7 +143,7 @@
                                                             <td> {{$fav->User['name']}} </td>
                                                             <td> {{$fav->Movie['name']}} </td>
                                                             <td>
-                                                                <a class="edit" style="color: green" href="javascript:;"> Edit </a>
+                                                                <a  style="color: green" href="{{url('/admin/favorites/edit/'.$fav['id'])}}"> Edit </a>
                                                             </td>
                                                             <td>
                                                                 <a  style="color: red" href="{{url('/admin/favorites/delete/'.$fav['id'])}}"> Delete </a>

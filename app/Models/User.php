@@ -53,8 +53,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Movie::class, 'user_movies');
     }
 
-    public function linkedSocialAccounts()
-    {
-        return $this->hasMany(LinkedSocialAccount::class);
-    }
+//    public function linkedSocialAccounts()
+//    {
+//        return $this->hasMany(LinkedSocialAccount::class,'review_id','id');
+//    }
 }
