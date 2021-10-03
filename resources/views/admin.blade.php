@@ -31,15 +31,19 @@
                                     <button type="button" class="btn btn-sm md-skip dropdown-toggle"
                                             data-toggle="dropdown" data-hover="dropdown"
                                             data-close-others="true">
-                                        <span>Hi, Marcus</span>
+                                        <span>{{auth()->user()->name}}</span>
                                         <img src="../assets/layouts/layout5/img/avatar1.jpg" alt="">
                                     </button>
                                 </div>
-                                <button type="button" class="quick-sidebar-toggler md-skip"
+                                <button type="button" class="quick-sidebar-toggler md-skip" onclick="$('#logoutFrm').submit()"
                                         data-toggle="collapse">
                                     <span class="sr-only">Toggle Quick Sidebar</span>
                                     <i class="icon-logout"></i>
                                 </button>
+
+                                <form method="POST" action="{{url('logout')}}" id="logoutFrm">
+                                    @csrf
+                                </form>
                             </div>
                         </div>
                         <!-- BEGIN HEADER MENU -->
