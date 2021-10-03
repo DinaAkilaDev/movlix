@@ -49,7 +49,7 @@ class LoginController extends Controller
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-
+//dd('uiyfuolyiol');
         if (\Illuminate\Support\Facades\Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             return redirect()->intended('/admin');
