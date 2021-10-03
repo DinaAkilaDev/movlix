@@ -41,7 +41,7 @@
                         <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
-                                    <a href="{{url('/')}}" class="text-uppercase">
+                                    <a href="{{url('/admin')}}" class="text-uppercase">
                                         <i class="icon-home"></i> Dashboard </a>
 
                                 </li>
@@ -161,7 +161,7 @@
                                                             <td><a style="color: blue" href="{{$mv['url']}}">link</a></td>
                                                             <td>{{$mv['cast']}}</td>
                                                             <td>
-                                                                <a class="edit" style="color: green" href="javascript:;"> Edit </a>
+                                                                <a  style="color: green" href="{{url('/admin/movies/edit/'.$mv['id'])}}"> Edit </a>
                                                             </td>
                                                             <td>
                                                                 <a  style="color: red" href="{{url('/admin/movies/delete/'.$mv['id'])}}"> Delete </a>

@@ -30,13 +30,15 @@ Route::post('/admin/register', [RegisterController::class,'createAdmin']);
 Route::view('/home', 'home')->middleware('auth');
 
 
-//Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
-//    // Admin Dashboard
+//Route::group(['middleware' => 'auth'], function () {
+//
     Route::view('/admin', 'admin');
     Route::view('/tables', 'tables');
 
     Route::get('/admin/movies', [AdminController::class,'showmovies']);
     Route::get('/admin/movies/delete/{id}', [AdminController::class, 'deletemovie']);
+    Route::get('/admin/movies/edit/{id}', [AdminController::class, 'editmovie']);
+    Route::post('/admin/movies/edit', [AdminController::class, 'editedmovie'])->name('editmovie');
 
     Route::get('/admin/users', [AdminController::class,'showusers']);
     Route::get('/admin/users/delete/{id}', [AdminController::class, 'deleteuser']);

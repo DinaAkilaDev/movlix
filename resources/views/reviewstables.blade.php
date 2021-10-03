@@ -41,7 +41,7 @@
                         <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown dropdown-fw dropdown-fw-disabled  ">
-                                    <a href="{{url('/')}}" class="text-uppercase">
+                                    <a href="{{url('/admin')}}" class="text-uppercase">
                                         <i class="icon-home"></i> Dashboard </a>
 
                                 </li>

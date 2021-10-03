@@ -111,4 +111,30 @@ class AdminController extends Controller
         $user->destroy($id);
         return Redirect::back();
     }
+    public function editmovie($id)
+    {
+        $movies = Movie::find($id);
+        return view('editmovie')->with(compact('movies'));
+    }
+
+    public function editedmovie(Request $request)
+    {
+
+        $id=$request->input('id');
+        $movie = Movie::find($id);
+        $movie->imdbid = $request->input('imdbid');
+        $movie->image = $request->input('image');
+        $movie->name = $request->input('name');
+        $movie->bio = $request->input('bio');
+        $movie->year = $request->input('year');
+        $movie->languages = $request->input('languages');
+        $movie->country = $request->input('country');
+        $movie->director = $request->input('director');
+        $movie->writer = $request->input('writer');
+        $movie->producer = $request->input('producer');
+        $movie->url = $request->input('url');
+        $movie->cast = $request->input('cast');
+        $movie->save();
+        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+    }
 }
