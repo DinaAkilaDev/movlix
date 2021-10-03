@@ -84,27 +84,13 @@
                         <div class="portlet box yellow">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i>Edit Movie
+                                    <i class="fa fa-gift"></i>Edit Intro
                                 </div>
                             </div>
                             <div class="portlet-body form">
-                                <form action="{{route('editmovie')}}" method="post" class="form-horizontal">
+                                <form action="{{route('editintro')}}" method="post" class="form-horizontal">
                                     @csrf
                                     <div class="form-body">
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">imdbid</label>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-key"></i>
-                                                    </span>
-                                                    <input type="number" name="imdbid" value="{{$movies->imdbid}}" class="form-control"
-                                                           placeholder="Imdb Id">
-                                                    <input type="hidden" name="id" value="{{$movies->id}}"  required>
-                                                </div>
-
-                                            </div>
-                                        </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Image</label>
                                             <div class="col-md-4">
@@ -112,78 +98,27 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-image"></i>
                                                     </span>
-                                                    <input type="url" name="Image" value="{{$movies->image}}" class="form-control"
+                                                    <input type="text" name="Image" value="{{$intros->image}}" class="form-control"
                                                            placeholder="Image Url">
+                                                    <input type="hidden" name="id" value="{{$intros->id}}"  required>
+
                                                 </div>
 
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Name</label>
+                                            <label class="col-md-3 control-label">bio</label>
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-file-movie-o"></i>
                                                     </span>
-                                                    <input type="text" name="name" value="{{$movies->name}}" class="form-control"
-                                                           placeholder="Name">
+                                                    <input type="text" name="bio" value="{{$intros->bio}}" class="form-control"
+                                                           placeholder="bio">
                                                 </div>
 
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Bio</label>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-sticky-note"></i>
-                                                    </span>
-                                                    <input type="text" name="bio" value="{{$movies->bio}}" class="form-control"
-                                                           placeholder="Bio">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Year</label>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-calendar-times-o"></i>
-                                                    </span>
-                                                    <input type="number" name="year" value="{{$movies->year}}" class="form-control"
-                                                           placeholder="Year">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Languages</label>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-language"></i>
-                                                    </span>
-                                                    <input type="text" name="languages" value="{{$movies->languages}}" class="form-control"
-                                                           placeholder="Languages">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Country</label>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        <i class="fa fa-language"></i>
-                                                    </span>
-                                                    <input type="text" name="country" value="{{$movies->country}}" class="form-control"
-                                                           placeholder="Country">
-                                                </div>
-
-                                            </div>
-                                        </div>
-
                                     </div>
                                     <div class="form-actions fluid">
                                         <div class="row">
