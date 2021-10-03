@@ -37,7 +37,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->middleware('guest:admin')->except('logout');
     }
      public function showAdminLoginForm()
     {
@@ -50,10 +49,8 @@ class LoginController extends Controller
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-
-        if (\Illuminate\Support\Facades\Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
-            return redirect()->intended('/admin');
+        if (auth()->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
+            return redirect()->route('admin');
         }
         return back()->withInput($request->only('email', 'remember'));
     }

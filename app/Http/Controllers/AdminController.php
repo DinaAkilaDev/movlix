@@ -70,7 +70,6 @@ class AdminController extends Controller
 
     public function editedmovie(Request $request)
     {
-
         $id=$request->input('id');
         $movie = Movie::find($id);
         $movie->imdbid = $request->input('imdbid');
