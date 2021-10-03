@@ -19,21 +19,28 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
-            }
-        }
-        return $next($request);
-//        if (Auth::guard('admin')->user()->name->check()) {
-//            return redirect('/admin');
-//        }
-//        if (Auth::guard('user')->check()) {
-//            return redirect('/home');
-//        }
+//        $guards = empty($guards) ? [null] : $guards;
 //
+//        foreach ($guards as $guard) {
+//            if (Auth::guard($guard)->check()) {
+//                return redirect(RouteServiceProvider::HOME);
+//            }
+//        }
 //        return $next($request);
+
+        if (Auth::guard($guard)->check()) {
+
+            if($guard == "admin"){
+                //user was authenticated with admin guard.
+                return redirect()->route('admin');
+            } else {
+                //default guard.
+                return redirect()->route('home');
+            }
+
+        }
+
+        return $next($request);
+
     }
 }
