@@ -175,7 +175,7 @@
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
-                                                        <i class="fa fa-language"></i>
+                                                        <i class="fa fa-globe-africa"></i>
                                                     </span>
                                                     <input type="text" name="country" value="{{$movies->country}}" class="form-control"
                                                            placeholder="Country">
@@ -183,6 +183,72 @@
 
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">director</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-sitemap"></i>
+                                                    </span>
+                                                    <input type="text" name="director" value="{{$movies->director}}" class="form-control"
+                                                           placeholder="director">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">writer</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-pen-square"></i>
+                                                    </span>
+                                                    <input type="text" name="writer" value="{{$movies->writer}}" class="form-control"
+                                                           placeholder="writer">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">producer</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-product-hunt"></i>
+                                                    </span>
+                                                    <input type="text" name="producer" value="{{$movies->producer}}" class="form-control"
+                                                           placeholder="producer">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">url</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-Users"></i>
+                                                    </span>
+                                                    <input type="text" name="url" value="{{$movies->url}}" class="form-control"
+                                                           placeholder="url">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">cast</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-Users"></i>
+                                                    </span>
+                                                    <input type="text" name="cast" value="{{$movies->cast}}" class="form-control"
+                                                           placeholder="cast">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                     <div class="form-actions fluid">

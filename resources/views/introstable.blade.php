@@ -143,7 +143,7 @@
                                                             <td><img src="{{$in['image']}}" width="200px" height="200px"></td>
                                                             <td> {{$in['bio']}} </td>
                                                             <td>
-                                                                <a class="edit" style="color: green" href="javascript:;"> Edit </a>
+                                                                <a  style="color: green" href="{{url('/admin/intros/edit/'.$in['id'])}}"> Edit </a>
                                                             </td>
                                                             <td>
                                                                 <a  style="color: red" href="{{url('/admin/intros/delete/'.$in['id'])}}"> Delete </a>
