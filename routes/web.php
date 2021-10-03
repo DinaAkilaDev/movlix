@@ -39,8 +39,10 @@ Route::view('/home', 'home')->middleware('auth');
     Route::get('/admin/movies/delete/{id}', [AdminController::class, 'deletemovie']);
     Route::get('/admin/movies/edit/{id}', [AdminController::class, 'editmovie']);
     Route::get('/admin/intros/edit/{id}', [AdminController::class, 'editintro']);
+    Route::get('/admin/users/edit/{id}', [AdminController::class, 'edituser']);
     Route::post('/admin/movies/edit', [AdminController::class, 'editedmovie'])->name('editmovie');
     Route::post('/admin/intros/edit', [AdminController::class, 'editedintro'])->name('editintro');
+    Route::post('/admin/users/edit', [AdminController::class, 'editeduser'])->name('edituser');
 
     Route::get('/admin/users', [AdminController::class,'showusers']);
     Route::get('/admin/users/delete/{id}', [AdminController::class, 'deleteuser']);

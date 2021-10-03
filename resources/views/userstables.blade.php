@@ -143,7 +143,7 @@
                                                             <td> {{$us['name']}} </td>
                                                             <td> {{$us['name']}} </td>
                                                             <td>
-                                                                <a class="edit" style="color: green" href="javascript:;"> Edit </a>
+                                                                <a  style="color: green" href="{{url('/admin/users/edit/'.$us['id'])}}"> Edit </a>
                                                             </td>
                                                             <td>
                                                                 <a  style="color: red" href="{{url('/admin/users/delete/'.$us['id'])}}"> Delete </a>

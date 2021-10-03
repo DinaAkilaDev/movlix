@@ -6,9 +6,9 @@ use App\Models\Favorite;
 use App\Models\Intro;
 use App\Models\Movie;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Laravel\Passport\Bridge\User;
 
 class AdminController extends Controller
 {
@@ -102,6 +102,23 @@ class AdminController extends Controller
         $intros->image = $request->input('image');
         $intros->bio = $request->input('bio');
         $intros->save();
+        return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
+    }
+
+    public function edituser($id)
+    {
+        $users = User::find($id);
+        return view('edituser')->with(compact('users'));
+    }
+
+    public function editeduser(Request $request)
+    {
+
+        $id=$request->input('id');
+        $users = User::find($id);
+        $users->name = $request->input('name');
+        $users->email = $request->input('email');
+        $users->save();
         return Redirect::back()->withErrors(['Edited Successfully', 'The Message']);
     }
 }
