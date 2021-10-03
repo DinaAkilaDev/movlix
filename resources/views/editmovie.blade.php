@@ -90,7 +90,12 @@
                             <div class="portlet-body form">
                                 <form action="{{route('editmovie')}}" method="post" class="form-horizontal">
                                     @csrf
+
                                     <div class="form-body">
+                                        <div class="form-group">
+                                            @if($errors->any())
+                                                <h4 class="col-md-3 control-label" style="color: green;">{{$errors->first()}}</h4>
+                                            @endif </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">imdbid</label>
                                             <div class="col-md-4">
@@ -112,7 +117,7 @@
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-image"></i>
                                                     </span>
-                                                    <input type="url" name="Image" value="{{$movies->image}}" class="form-control"
+                                                    <input type="url" name="image" value="{{$movies->image}}" class="form-control"
                                                            placeholder="Image Url">
                                                 </div>
 
@@ -175,10 +180,75 @@
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
-                                                        <i class="fa fa-language"></i>
+                                                        <i class="fa fa-flag"></i>
                                                     </span>
                                                     <input type="text" name="country" value="{{$movies->country}}" class="form-control"
                                                            placeholder="Country">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Director</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-"></i>
+                                                    </span>
+                                                    <input type="text" name="director" value="{{$movies->director}}" class="form-control"
+                                                           placeholder="Director">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Writer</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </span>
+                                                    <input type="text" name="writer" value="{{$movies->writer}}" class="form-control"
+                                                           placeholder="Writer">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">producer</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </span>
+                                                    <input type="text" name="producer" value="{{$movies->producer}}" class="form-control"
+                                                           placeholder="producer">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">url</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-link"></i>
+                                                    </span>
+                                                    <input type="text" name="url" value="{{$movies->url}}" class="form-control"
+                                                           placeholder="url">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">cast</label>
+                                            <div class="col-md-4">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-users"></i>
+                                                    </span>
+                                                    <input type="text" name="cast" value="{{$movies->cast}}" class="form-control"
+                                                           placeholder="cast">
                                                 </div>
 
                                             </div>
@@ -191,10 +261,11 @@
                                                 <button type="submit" class="btn green">Submit</button>
                                                 <button type="button" class="btn default">Cancel</button>
                                             </div>
+
                                         </div>
                                     </div>
                                 </form>
-                                <!-- END FORM-->
+
                             </div>
                         </div>
 

@@ -60,7 +60,7 @@
                 <div class="page-content">
                     <!-- BEGIN BREADCRUMBS -->
                     <div class="breadcrumbs">
-                        <h1>Movie table</h1>
+                        <h1>Intro table</h1>
                         <ol class="breadcrumb">
                             <li>
                                 <a href="{{url('/')}}">Home</a>
@@ -92,13 +92,17 @@
                                     @csrf
                                     <div class="form-body">
                                         <div class="form-group">
+                                            @if($errors->any())
+                                                <h4 class="col-md-3 control-label" style="color: green;">{{$errors->first()}}</h4>
+                                            @endif </div>
+                                        <div class="form-group">
                                             <label class="col-md-3 control-label">Image</label>
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-image"></i>
                                                     </span>
-                                                    <input type="text" name="Image" value="{{$intros->image}}" class="form-control"
+                                                    <input type="text" name="image" value="{{$intros->image}}" class="form-control"
                                                            placeholder="Image Url">
                                                     <input type="hidden" name="id" value="{{$intros->id}}"  required>
 

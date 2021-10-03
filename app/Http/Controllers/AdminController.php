@@ -8,8 +8,7 @@ use App\Models\Movie;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Laravel\Passport\Bridge\User;
-
+use \App\Models\User;
 class AdminController extends Controller
 {
     public function showmovies(){
